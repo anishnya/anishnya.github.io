@@ -1,8 +1,8 @@
 {
-    "title": "Harry Potter",
-    "name": "Harry James Potter",
-    "domain":"https://nextjs-academic-theme.vercel.app/",
-    "copyright":"harrypotter.me",
+    "title": "Anish Nyayachavadi Personal Site",
+    "name": "Anish Nyayachavadi",
+    "domain": "https://anishnya.github.io",
+    "copyright": "",
     "socialMedia": {
         "Twitter": "https://twitter.com/",
         "LinkedIn": "https://www.linkedin.com/",
@@ -36,6 +36,4 @@
             "link": "https://harrypotter.fandom.com/wiki/Hogwarts_School_of_Witchcraft_and_Wizardry"
         }
     ]
-
-
 }

@@ -14,19 +14,23 @@ const About = (): JSX.Element => {
 				<div className="flex flex-col max-w-xl w-full justify-evenly">
 					<h1 className="text-4xl font-bold pb-8 md:pb-0">{personalInfo.name}</h1>
 					<p>
+						Under Construction...<br />
+						But for the curious, I enjoy hiking, sailing, and astrophotography during my free time.
+					</p>
+					{/* <p>
 						I am a {personalInfo.about.year} PhD student
 						in <ExtLink href= {personalInfo.about.department.link}>{personalInfo.about.department.name} </ExtLink>
 						at <ExtLink href= {personalInfo.about.college.link}>{personalInfo.about.college.name} </ExtLink> 
 						advised by <ExtLink href={personalInfo.about.advisor.link}> {personalInfo.about.advisor.name}. </ExtLink>
 						 <br/><a className = "text-sm">✉️ {personalInfo.about.email}</a>
-					</p>
-					<p className = "text-sm text-gray-600">
+					</p> */}
+					{/* <p className = "text-sm text-gray-600">
 						Research Interest: {personalInfo.about.interest}
 					</p>
 					<p className = "text-sm text-gray-400">
 						Under construction......<br/>
 						Re-architecting this site with some modern web technologies.
-					</p>
+					</p> */}
 				</div>
 			</div>
 		</section>
