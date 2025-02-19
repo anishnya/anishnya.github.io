@@ -15,7 +15,7 @@ const About = (): JSX.Element => {
 					<h1 className="text-4xl font-bold pb-8 md:pb-0">{personalInfo.name}</h1>
 					<p>
 						Under Construction...<br />
-						But for the curious, I enjoy hiking, sailing, and astrophotography during my free time.
+						However for the curious, I enjoy hiking, sailing, and astrophotography during my free time. See you soon :)
 					</p>
 					{/* <p>
 						I am a {personalInfo.about.year} PhD student
