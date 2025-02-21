@@ -1,5 +1,4 @@
 import Image from 'next/image';
-
 import ExtLink from './ExtLink';
 import ProfileImage from './ProfileImage';
 import personalInfo from './data/personalInfo.json'

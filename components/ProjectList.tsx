@@ -7,11 +7,11 @@ const ProjectList = (): JSX.Element => {
             <h2 className="text-xl font-bold mt-12 mb-4">Projects</h2>
             <div>
                 {data.map((project, index) => (
-                    <ProjectItem project={project} index={index}/>
+                    <ProjectItem project={project} index={index} />
                 ))}
             </div>
         </section>
-        
+
     );
 };
 

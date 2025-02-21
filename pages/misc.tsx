@@ -1,9 +1,9 @@
-import {useState} from 'react';
-import {NextPage} from 'next';
-import {Audio} from 'react-loader-spinner';
+import { useState } from 'react';
+import { NextPage } from 'next';
+// import {Audio} from 'react-loader-spinner';
 
 
-const Style={
+const Style = {
     height: 498,
     width: 680,
     frameborder: 0

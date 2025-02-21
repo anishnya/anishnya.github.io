@@ -1,4 +1,4 @@
-import {NextPage} from 'next';
+import { NextPage } from 'next';
 
 const FourOFour: NextPage<unknown> = () => (
 	<section className="grid gap-12">

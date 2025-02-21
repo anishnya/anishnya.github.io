@@ -1,15 +1,15 @@
 import Link from 'next/link';
 import Image from 'next/image';
 import NavLink from './NavLink';
-import {Sun, Moon} from 'react-feather';
+import { Sun, Moon } from 'react-feather';
 
-interface HeaderProps{
+interface HeaderProps {
     mounted: any,
     resolvedTheme: any,
     setTheme: any,
     scrolled: any
 }
-const Header = ({mounted, resolvedTheme, setTheme, scrolled}: HeaderProps): JSX.Element => {
+const Header = ({ mounted, resolvedTheme, setTheme, scrolled }: HeaderProps): JSX.Element => {
     return (
         <header className={`z-10 pt-10 pb-1 mb-10 pl-0 top-0 right-0 left-0 transition border-b ${scrolled ? 'border-gray-400' : 'bg-transparent border-transparent'} sticky w-screen backdrop-filter backdrop-blur-md`}>
             <div className="h-0 pb-9 pl-5 max-w-4xl w-full flex items-center justify-between m-auto">
@@ -18,13 +18,13 @@ const Header = ({mounted, resolvedTheme, setTheme, scrolled}: HeaderProps): JSX.
                         src="/favicon/favicon.svg"
                         width={45}
                         height={45}
-                        alt="favicon"/>
+                        alt="favicon" />
                 </Link>
                 <nav className="flex items-center justify-between pr-4">
-                    <NavLink title="About" href="/#about"/>
-                    <NavLink title="Publications" href="/#publications"/>
-                    <NavLink title="Projects" href="/projects"/>
-                    <NavLink title="Misc" href="/misc"/>
+                    <NavLink title="About" href="/#about" />
+                    <NavLink title="Publications" href="/#publications" />
+                    <NavLink title="Projects" href="/projects" />
+                    <NavLink title="Misc" href="/misc" />
 
                     <button
                         type="button"
@@ -51,7 +51,7 @@ const Header = ({mounted, resolvedTheme, setTheme, scrolled}: HeaderProps): JSX.
                 </nav>
             </div>
         </header>
-        
+
     );
 };
 

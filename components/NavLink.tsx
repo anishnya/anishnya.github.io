@@ -1,4 +1,4 @@
-import {useRouter} from 'next/router';
+import { useRouter } from 'next/router';
 import Link from 'next/link';
 
 interface Props {
@@ -6,7 +6,7 @@ interface Props {
 	href: string;
 }
 
-const NavLink = ({title, href}: Props): JSX.Element => {
+const NavLink = ({ title, href }: Props): JSX.Element => {
 	const router = useRouter();
 
 	return (
