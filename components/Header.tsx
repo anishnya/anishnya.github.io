@@ -12,7 +12,7 @@ interface HeaderProps {
 const Header = ({ mounted, resolvedTheme, setTheme, scrolled }: HeaderProps): JSX.Element => {
     return (
         <header className={`z-10 pt-10 pb-1 mb-10 pl-0 top-0 right-0 left-0 transition border-b ${scrolled ? 'border-gray-400' : 'bg-transparent border-transparent'} sticky w-screen backdrop-filter backdrop-blur-md`}>
-            <div className="h-0 pb-9 pl-5 max-w-4xl w-full flex items-center justify-between m-auto">
+            <div className="h-0 pb-9 px-5 max-w-4xl w-full flex items-center justify-between m-auto">
                 <Link href="/">
                     <Image className="cursor-pointer transition-colors flex !p-1 rounded-md mr-8 hover:bg-gray-300 text-lg dark:filter dark:invert"
                         src="/favicon/favicon.svg"
@@ -20,16 +20,15 @@ const Header = ({ mounted, resolvedTheme, setTheme, scrolled }: HeaderProps): JS
                         height={45}
                         alt="favicon" />
                 </Link>
-                <nav className="flex items-center justify-between pr-4">
+                <nav className="flex items-center justify-between">
                     <NavLink title="About" href="/#about" />
                     <NavLink title="Publications" href="/#publications" />
                     <NavLink title="Projects" href="/projects" />
                     <NavLink title="Misc" href="/misc" />
-
                     <button
                         type="button"
                         aria-label="Change theme"
-                        className="cursor-pointer hover:bg-gray-300 p-1 dark:hover:bg-gray-600 focus:outline-none focus:ring focus:border-blue-30 rounded-md"
+                        className="cursor-pointer hover:bg-gray-300 px-3 sm:px-5 mr-0 h-8 dark:hover:bg-gray-600 focus:outline-none focus:ring-2 focus:ring-inset focus:border-blue-30 rounded-lg flex items-center justify-center min-w-[2rem] transition-all duration-300"
                         disabled={!mounted}
                         onClick={() => {
                             setTheme(resolvedTheme === 'light' ? 'dark' : 'light');
@@ -37,12 +36,12 @@ const Header = ({ mounted, resolvedTheme, setTheme, scrolled }: HeaderProps): JS
                         <abbr title="Switch theme">
                             {resolvedTheme === 'light' ? (
                                 <Moon
-                                    size={22}
+                                    size={20}
                                     aria-label="Moon"
                                 />
                             ) : (
                                 <Sun
-                                    size={22}
+                                    size={20}
                                     aria-label="Sun"
                                 />
                             )}

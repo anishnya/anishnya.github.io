@@ -6,8 +6,8 @@ import personalInfo from './data/personalInfo.json'
 const About = (): JSX.Element => {
 	return (
 		<section className="grid gap-12" id="about">
-			<div className="flex justify-between">
-				<div className="mr-8 hidden md:block rounded-md">
+			<div className="flex flex-col sm:flex-row justify-between">
+				<div className="w-auto mr-8 rounded-md">
 					<ProfileImage></ProfileImage>
 				</div>
 				<div className="flex flex-col max-w-xl w-full justify-evenly">
