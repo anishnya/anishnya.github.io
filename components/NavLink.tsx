@@ -3,10 +3,11 @@ import Link from 'next/link';
 
 interface Props {
 	title: string;
+	shortTitle: string;
 	href: string;
 }
 
-const NavLink = ({ title, href }: Props): JSX.Element => {
+const NavLink = ({ title, shortTitle, href }: Props): JSX.Element => {
 	const router = useRouter();
 
 	return (
@@ -17,7 +18,8 @@ const NavLink = ({ title, href }: Props): JSX.Element => {
 					items-center border-none cursor-pointer font-bold text-sm
 					transition-all duration-300 
 					${router.asPath === href ? 'bg-black dark:bg-white text-white dark:text-black' : 'bg-auto'}`}>
-				{title}
+				<span className="hidden sm:inline">{title}</span>
+				<span className="sm:hidden">{shortTitle}</span>
 			</button>
 		</Link>
 	);
