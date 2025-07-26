@@ -6,7 +6,7 @@ import Layout from '../components/Layout';
 import personalInfo from '../components/data/personalInfo.json';
 // import GoogleTag from '../components/GoogleTag';
 
-import 'tailwindcss/tailwind.css';
+import 'tailwindcss/index.css';
 
 const App = ({ Component, pageProps }: Readonly<AppProps>): JSX.Element => {
 	const { resolvedTheme } = useTheme();
