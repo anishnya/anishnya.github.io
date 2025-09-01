@@ -5,7 +5,6 @@ import PublicationList from '../components/PublicationList';
 import Teaching from '../components/Teaching';
 import Education from '../components/Education';
 
-
 const Index: NextPage<unknown> = () => (
     <>
         <About />

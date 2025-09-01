@@ -1,39 +1,35 @@
-import { useState, useEffect } from 'react';
 import { useScrollPosition } from '@n8tb1t/use-scroll-position';
-import { useTheme } from 'next-themes';
+import { useState } from 'react';
 
-import ExtLink from './ExtLink';
-import Header from './Header';
+// import ExtLink from './ExtLink';
 import Footer from './Footer';
+import Header from './Header';
 
 interface Props {
-	children: React.ReactNode;
+    children: React.ReactNode;
 }
 
 const Layout = ({ children }: Props): JSX.Element => {
-	const [mounted, setMounted] = useState(false);
-	const [scrolled, setScrolled] = useState(false);
-	const { resolvedTheme, setTheme } = useTheme();
+    const [scrolled, setScrolled] = useState(false);
 
-	useEffect(() => {
-		setMounted(true);
-	}, []);
+    useScrollPosition(
+        ({ currPos }: { currPos: { y: number } }) => {
+            if (currPos.y <= -20) {
+                setScrolled(true);
+            } else {
+                setScrolled(false);
+            }
+        },
+        [scrolled]
+    );
 
-	useScrollPosition(({ currPos }: { currPos: { y: number } }) => {
-		if (currPos.y <= -20) {
-			setScrolled(true);
-		} else {
-			setScrolled(false);
-		}
-	}, [scrolled]);
-
-	return (
-		<>
-			<Header mounted={mounted} resolvedTheme={resolvedTheme} setTheme={setTheme} scrolled={scrolled} />
-			<main>{children}</main>
-			<Footer />
-		</>
-	);
+    return (
+        <>
+            <Header scrolled={scrolled} />
+            <main>{children}</main>
+            <Footer />
+        </>
+    );
 };
 
 export default Layout;

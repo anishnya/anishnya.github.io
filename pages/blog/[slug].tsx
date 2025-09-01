@@ -24,32 +24,29 @@ const BlogPost: NextPage<BlogPostProps> = ({ title, content }) => {
 
 export const getStaticPaths: GetStaticPaths = async () => {
     // Fetch the list of blog posts from your data source
-    const posts = [
-        { slug: 'first-post' },
-        { slug: 'second-post' }
-    ];
+    const posts = [{ slug: 'first-post' }, { slug: 'second-post' }];
 
-    const paths = posts.map(post => ({
-        params: { slug: post.slug }
+    const paths = posts.map((post) => ({
+        params: { slug: post.slug },
     }));
 
     return { paths, fallback: true };
 };
 
-export const getStaticProps: GetStaticProps = async ({ params }) => {
-    const { slug } = params as { slug: string };
+export const getStaticProps: GetStaticProps = async () => {
+    // const { slug: _slug } = params as { slug: string };
 
     // Fetch the blog post data from your data source
     const post = {
         title: 'Sample Blog Post',
-        content: '<p>This is a sample blog post content.</p>'
+        content: '<p>This is a sample blog post content.</p>',
     };
 
     return {
         props: {
             title: post.title,
-            content: post.content
-        }
+            content: post.content,
+        },
     };
 };
 

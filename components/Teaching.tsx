@@ -1,4 +1,4 @@
-import data from './data/teaching.json'
+import data from './data/teaching.json';
 
 const Teaching = (): JSX.Element => {
     return (
@@ -7,11 +7,12 @@ const Teaching = (): JSX.Element => {
             <div className="text-base ml-4 text-gray-700">
                 <ul className="list-disc">
                     {data.map((classInfo) => (
-                        <li key={classInfo.id}>TA: {classInfo.id}, {classInfo.name}</li>
+                        <li key={classInfo.id}>
+                            TA: {classInfo.id}, {classInfo.name}
+                        </li>
                     ))}
                 </ul>
             </div>
-
         </section>
     );
 };
