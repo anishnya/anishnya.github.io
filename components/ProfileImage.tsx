@@ -8,7 +8,7 @@ const ProfileImage = (): JSX.Element => {
             // onMouseOver = {e => e.currentTarget.src = "/images/gelo.HEIC"}
             // onMouseOut = {e => e.currentTarget.src = "/images/me.jpg"}
             draggable={false}
-            alt="My profile image"
+            alt="Anish Nyayachavadi Profile Image"
             width={260}
             height={260}
         />
