@@ -1,7 +1,6 @@
 import { GetStaticProps, NextPage } from 'next';
 import Link from 'next/link';
 import moment from 'moment';
-import Layout from '../components/Layout';
 import { getAllBlogPosts, type BlogPost } from '../utils/blog';
 
 interface BlogPageProps {
@@ -17,7 +16,8 @@ const BlogPage: NextPage<BlogPageProps> = ({ posts }) => {
                         Blog
                     </h1>
                     <p className="text-lg text-gray-600 dark:text-gray-400">
-                        Thoughtful thoughts, insightful insights, up-to-date updates, and many (hopefully) interesting tidbits.
+                        Thoughtful thoughts, insightful insights, up-to-date
+                        updates, and many (hopefully) interesting tidbits.
                     </p>
                 </header>
 
@@ -43,7 +43,9 @@ const BlogPage: NextPage<BlogPageProps> = ({ posts }) => {
 
                                 {post.date && (
                                     <time className="text-sm text-gray-600 dark:text-gray-400 mb-3 block">
-                                        {moment(post.date).format('MMMM D, YYYY')}
+                                        {moment(post.date).format(
+                                            'MMMM D, YYYY'
+                                        )}
                                     </time>
                                 )}
 

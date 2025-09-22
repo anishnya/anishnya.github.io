@@ -16,8 +16,8 @@ export interface BlogPost {
 export function getAllBlogSlugs(): string[] {
     const fileNames = fs.readdirSync(blogsDirectory);
     return fileNames
-        .filter(name => name.endsWith('.md'))
-        .map(name => name.replace(/\.md$/, ''));
+        .filter((name) => name.endsWith('.md'))
+        .map((name) => name.replace(/\.md$/, ''));
 }
 
 export function getBlogPostBySlug(slug: string): BlogPost | null {
@@ -34,14 +34,18 @@ export function getBlogPostBySlug(slug: string): BlogPost | null {
         const date = dateMatch ? dateMatch[1] : '';
 
         // Remove the title line from content
-        const contentWithoutTitle = fileContents.replace(/^#\s+.+$/m, '').trim();
+        const contentWithoutTitle = fileContents
+            .replace(/^#\s+.+$/m, '')
+            .trim();
 
         // Create excerpt from first paragraph (remove markdown formatting for excerpt only)
-        const firstParagraph = fileContents
-            .split('\n\n')[1] // Skip the title line
-            ?.replace(/[#*`]/g, '') // Remove markdown formatting
-            ?.substring(0, 200) || '';
-        const excerpt = firstParagraph + (firstParagraph.length >= 200 ? '...' : '');
+        const firstParagraph =
+            fileContents
+                .split('\n\n')[1] // Skip the title line
+                ?.replace(/[#*`]/g, '') // Remove markdown formatting
+                ?.substring(0, 200) || '';
+        const excerpt =
+            firstParagraph + (firstParagraph.length >= 200 ? '...' : '');
 
         return {
             slug,
@@ -59,7 +63,7 @@ export function getBlogPostBySlug(slug: string): BlogPost | null {
 export function getAllBlogPosts(): BlogPost[] {
     const slugs = getAllBlogSlugs();
     const posts = slugs
-        .map(slug => getBlogPostBySlug(slug))
+        .map((slug) => getBlogPostBySlug(slug))
         .filter((post): post is BlogPost => post !== null)
         .sort((a, b) => {
             // Sort by date descending (newest first)
