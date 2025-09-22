@@ -17,14 +17,15 @@ const Header = ({ scrolled }: HeaderProps): JSX.Element => {
             className={`z-10 pt-10 pb-1 pl-0 top-0 right-0 left-0 transition border-b ${scrolled ? 'border-gray-400' : 'bg-transparent border-transparent'} sticky w-screen backdrop-filter backdrop-blur-md`}
         >
             <div className="h-0 pb-9 px-5 max-w-4xl w-full flex items-center justify-between m-auto">
-                <Link href="/">
+                <Link href="/" className="flex items-center">
                     <Image
-                        className="cursor-pointer transition-colors flex !p-1 rounded-md mr-8 hover:bg-gray-300 text-lg dark:filter dark:invert"
-                        src="/favicon/favicon.svg"
+                        className="cursor-pointer transition-colors !p-1 rounded-full mr-3 hover:bg-gray-300 text-lg dark:filter"
+                        src="/images/anish-alt.jpg"
                         width={40}
                         height={40}
                         alt="favicon"
                     />
+                    <span className="text-lg">Anish N.</span>
                 </Link>
                 <nav className="flex items-center justify-between">
                     <NavLink title="About" shortTitle="About" href="/#about" />
@@ -33,6 +34,7 @@ const Header = ({ scrolled }: HeaderProps): JSX.Element => {
                         shortTitle="Pubs"
                         href="/#publications"
                     />
+                    <NavLink title="Blog" shortTitle="Blog" href="/blog" />
                     <NavLink
                         title="Contact"
                         shortTitle="Contact"
