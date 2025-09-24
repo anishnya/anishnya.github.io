@@ -28,22 +28,16 @@ const SupportingBox = (): JSX.Element => {
         <div className="flex justify-between w-44 dark:invert">
             <div className="flex justify-between w-44">
                 <Box href="/cv.pdf" label="CV">
-                    <IconImage
-                        path="/images/cv-file-interface-symbol-svgrepo-com.svg"
-                        name="CV"
-                    />
-                </Box>
-                <Box href={personalInfo.socialMedia.Twitter} label="Twitter">
-                    <IconImage
-                        path="/images/icons8-twitter.svg"
-                        name="Twitter"
-                    />
+                    <IconImage path="/images/icons8-cv.svg" name="CV" />
                 </Box>
                 <Box href={personalInfo.socialMedia.LinkedIn} label="LinkedIn">
                     <IconImage
                         path="/images/icons8-linkedin.svg"
                         name="LinkedIn"
                     />
+                </Box>
+                <Box href="" label="GitHub">
+                    <IconImage path="/images/icons8-github.svg" name="GitHub" />
                 </Box>
                 <Box
                     href={personalInfo.socialMedia.GoogleScholar}

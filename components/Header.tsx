@@ -28,19 +28,12 @@ const Header = ({ scrolled }: HeaderProps): JSX.Element => {
                     <span className="text-lg">Anish N.</span>
                 </Link>
                 <nav className="flex items-center justify-between">
-                    <NavLink title="About" shortTitle="About" href="/#about" />
-                    <NavLink
-                        title="Publications"
-                        shortTitle="Pubs"
-                        href="/#publications"
-                    />
                     <NavLink title="Blog" shortTitle="Blog" href="/blog" />
                     <NavLink
                         title="Contact"
                         shortTitle="Contact"
                         href="/#contact"
                     />
-                    <NavLink title="CV" shortTitle="CV" href="/#cv" />
                     <NavLink title="Misc" shortTitle="Misc" href="/misc" />
                     <button
                         type="button"
