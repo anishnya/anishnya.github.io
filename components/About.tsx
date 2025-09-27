@@ -18,7 +18,7 @@ const About = (): JSX.Element => {
                     backgroundSize: 'cover',
                     backgroundPosition: 'center',
                     backgroundRepeat: 'no-repeat',
-                    filter: 'blur(2px)',
+                    filter: 'blur(3px)',
                     transform: 'scale(1.1)',
                 }}
             />
