@@ -10,7 +10,7 @@ interface BlogPageProps {
 const BlogPage: NextPage<BlogPageProps> = ({ posts }) => {
     return (
         <>
-            <div className="max-w-4xl mx-auto px-4 py-8">
+            <div className="max-w-4xl mx-auto px-4">
                 <header className="mb-12">
                     <h1 className="text-4xl font-bold text-gray-900 dark:text-white mb-4">
                         Blog

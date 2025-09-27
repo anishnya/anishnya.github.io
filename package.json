@@ -12,7 +12,17 @@
         "format": "prettier --write .",
         "format:check": "prettier --check .",
         "test": "npm run lint && npm run format:check",
-        "postbuild": "next-sitemap"
+        "postbuild": "next-sitemap",
+        "prepare": "husky install"
+    },
+    "lint-staged": {
+        "*.{js,jsx,ts,tsx}": [
+            "eslint --fix",
+            "prettier --write"
+        ],
+        "*.{json,md,css}": [
+            "prettier --write"
+        ]
     },
     "dependencies": {
         "@n8tb1t/use-scroll-position": "^2.0.3",
@@ -50,6 +60,8 @@
         "eslint-plugin-prettier": "^5.5.4",
         "eslint-plugin-react": "^7.37.0",
         "eslint-plugin-react-hooks": "^5.2.0",
+        "husky": "^9.1.7",
+        "lint-staged": "^16.2.1",
         "postcss": "^8.5.6",
         "prettier": "^3.6.2",
         "tailwindcss": "^4.1.12",

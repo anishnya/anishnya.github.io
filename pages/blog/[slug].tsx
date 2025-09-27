@@ -30,7 +30,7 @@ const BlogPostPage: NextPage<BlogPostPageProps> = ({ post }) => {
                     content={`Blog post by Anish N. - ${post.title}`}
                 />
             </Head>
-            <article className="w-full py-8">
+            <article className="w-full">
                 <nav className="mb-4">
                     <Link
                         href="/blog"
