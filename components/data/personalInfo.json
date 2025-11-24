@@ -19,13 +19,12 @@
             "link": "https://harrypotter.fandom.com/wiki/Hogwarts_School_of_Witchcraft_and_Wizardry"
         },
         "advisor": {
-            "name": "Albus Dumbledor",
-            "link": "https://harrypotter.fandom.com/wiki/Albus_Dumbledore"
+            "name": "Donna Hicks",
+            "link": "https://yalebooks.yale.edu/book/9780300248456/leading-with-dignity/"
         },
         "email": "harrypotter AT MyUniversity",
         "interest": "Defense against Dark Arts Spell; Dark Creatures"
     },
-    "love": "https://harrypotter.fandom.com/wiki/James_and_Lily_Potter",
     "education": [
         {
             "name": "The Auror Department(2007-2008, Visiting Scholar)",
