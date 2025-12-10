@@ -1,4 +1,4 @@
-import { useScrollPosition } from '@n8tb1t/use-scroll-position';
+import { useWindowScrollPosition } from '@n8tb1t/use-scroll-position';
 import { useState } from 'react';
 
 // import ExtLink from './ExtLink';
@@ -10,18 +10,15 @@ interface Props {
 }
 
 const Layout = ({ children }: Props): JSX.Element => {
-    const [scrolled, setScrolled] = useState(false);
+    const [scrolled, setScrolled] = useState(true);
 
-    useScrollPosition(
-        ({ currPos }: { currPos: { y: number } }) => {
-            if (currPos.y <= -20) {
-                setScrolled(true);
-            } else {
-                setScrolled(false);
-            }
-        },
-        [scrolled]
-    );
+    useWindowScrollPosition(({ currPos }: { currPos: { y: number } }) => {
+        if (currPos.y <= -20) {
+            setScrolled(true);
+        } else {
+            setScrolled(false);
+        }
+    }, {});
 
     return (
         <>
