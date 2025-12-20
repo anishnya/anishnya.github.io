@@ -28,8 +28,6 @@
         "@n8tb1t/use-scroll-position": "^4.0.0",
         "@tailwindcss/postcss": "^4.1.12",
         "@tailwindcss/typography": "^0.5.18",
-        "graphql": "^16.11.0",
-        "graphql-request": "^7.2.0",
         "lucide-react": "^0.542.0",
         "moment": "^2.30.1",
         "next": "^16.0.10",
