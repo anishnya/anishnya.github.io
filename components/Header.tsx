@@ -41,7 +41,7 @@ const Header = ({ scrolled }: HeaderProps): JSX.Element => {
                         className="cursor-pointer hover:bg-gray-300 px-3 sm:px-5 mr-0 h-8 dark:hover:bg-gray-600 focus:outline-none focus:ring-2 focus:ring-inset focus:border-blue-30 rounded-lg flex items-center justify-center min-w-[2rem] transition-all duration-300"
                         onClick={() => {
                             setTheme(
-                                resolvedTheme === 'light' ? 'dark' : 'light'
+                                resolvedTheme === 'light' ? 'dark' : 'light',
                             );
                         }}
                     >

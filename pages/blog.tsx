@@ -44,7 +44,7 @@ const BlogPage: NextPage<BlogPageProps> = ({ posts }) => {
                                 {post.date && (
                                     <time className="text-sm text-gray-600 dark:text-gray-400 mb-3 block">
                                         {moment(post.date).format(
-                                            'MMMM D, YYYY'
+                                            'MMMM D, YYYY',
                                         )}
                                     </time>
                                 )}

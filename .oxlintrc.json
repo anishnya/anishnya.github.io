@@ -1,0 +1,23 @@
+{
+    "$schema": "./node_modules/oxlint/configuration_schema.json",
+    "plugins": ["nextjs", "react", "react-perf", "oxc", "typescript", "import"],
+    "ignorePatterns": [
+        "node_modules/**",
+        ".next/**",
+        "out/**",
+        "dist/**",
+        "build/**",
+        "*.config.js",
+        "*.config.mjs",
+        "next-env.d.ts"
+    ],
+    "rules": {
+        "nextjs/no-img-element": "warn",
+        "no-unused-vars": [
+            "error",
+            {
+                "argsIgnorePattern": "^_"
+            }
+        ]
+    }
+}

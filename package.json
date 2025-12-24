@@ -1,33 +1,19 @@
 {
     "name": "anishnya-personal-website",
-    "description": "Personal website of Anish Nyayachavadi",
     "version": "1.0.0",
-    "type": "module",
+    "private": true,
+    "description": "Personal website of Anish Nyayachavadi",
     "scripts": {
-        "build": "next build",
-        "dev": "next dev",
-        "export": "next export",
-        "lint": "eslint . --ext .ts,.tsx,.js,.jsx",
-        "lint:fix": "eslint . --ext .ts,.tsx,.js,.jsx --fix",
-        "format": "prettier --write .",
-        "format:check": "prettier --check .",
-        "test": "npm run lint && npm run format:check",
-        "postbuild": "next-sitemap",
-        "prepare": "husky install"
-    },
-    "lint-staged": {
-        "*.{js,jsx,ts,tsx}": [
-            "eslint --fix",
-            "prettier --write"
-        ],
-        "*.{json,md,css}": [
-            "prettier --write"
-        ]
+        "dev": "bun --bun next dev",
+        "build": "bun --bun next build",
+        "export": "bun --bun next export",
+        "lint": "oxlint --import-plugin --react-plugin --react-perf-plugin --nextjs-plugin",
+        "lint:fix": "oxlint --import-plugin --react-plugin --react-perf-plugin --nextjs-plugin --fix --fix-suggestions",
+        "format": "oxfmt --write",
+        "format:check": "oxfmt --check"
     },
     "dependencies": {
         "@n8tb1t/use-scroll-position": "^4.0.0",
-        "@tailwindcss/postcss": "^4.1.12",
-        "@tailwindcss/typography": "^0.5.18",
         "lucide-react": "^0.542.0",
         "moment": "^2.30.1",
         "next": "^16.0.10",
@@ -39,34 +25,14 @@
         "react-syntax-highlighter": "^16.1.0"
     },
     "devDependencies": {
-        "@babel/core": "^7.28.0",
-        "@eslint/eslintrc": "^3.3.1",
-        "@eslint/js": "^9.39.2",
-        "@next/eslint-plugin-next": "^15.5.2",
-        "@types/node": "24.1.0",
-        "@types/react": "^19.1.0",
+        "@tailwindcss/postcss": "^4",
+        "@tailwindcss/typography": "^0.5.18",
+        "@types/bun": "^1.3.2",
+        "@types/react": "^19.2.3",
         "@types/react-syntax-highlighter": "^15.5.13",
-        "@typescript-eslint/eslint-plugin": "^8.38.0",
-        "@typescript-eslint/parser": "^8.38.0",
-        "autoprefixer": "^10.4.0",
-        "beasties": "^0.3.5",
-        "eslint": "^9.39.2",
-        "eslint-config-next": "^15.5.2",
-        "eslint-config-prettier": "^10.1.8",
-        "eslint-config-xo-react": "^0.28.0",
-        "eslint-config-xo-typescript": "^9.0.0",
-        "eslint-plugin-prettier": "^5.5.4",
-        "eslint-plugin-react": "^7.37.0",
-        "eslint-plugin-react-hooks": "^5.2.0",
-        "husky": "^9.1.7",
-        "lint-staged": "^16.2.1",
-        "postcss": "^8.5.6",
-        "prettier": "^3.6.2",
-        "tailwindcss": "^4.1.12",
-        "typescript": "^5.8.0",
-        "xo": "^0.60.0"
-    },
-    "resolutions": {
-        "webpack": "^5.1.0"
+        "oxfmt": "^0.20.0",
+        "oxlint": "^1.35.0",
+        "tailwindcss": "^4",
+        "typescript": "^5"
     }
 }

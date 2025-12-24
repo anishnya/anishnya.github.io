@@ -104,7 +104,7 @@ const BlogPostPage: NextPage<BlogPostPageProps> = ({ post }) => {
                             ),
                             code: ({ className, children, ...props }: any) => {
                                 const match = /language-(\w+)/.exec(
-                                    className || ''
+                                    className || '',
                                 );
                                 const language = match ? match[1] : '';
                                 const inline = !match;
@@ -120,7 +120,7 @@ const BlogPostPage: NextPage<BlogPostPageProps> = ({ post }) => {
                                         >
                                             {String(children).replace(
                                                 /\n$/,
-                                                ''
+                                                '',
                                             )}
                                         </SyntaxHighlighter>
                                     );
