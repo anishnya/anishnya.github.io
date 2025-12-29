@@ -1,3 +1,5 @@
+import Image from 'next/image';
+
 interface ProjectProps {
     project: any;
 }
@@ -5,7 +7,7 @@ interface ProjectProps {
 const ProjectItem = ({ project }: ProjectProps): JSX.Element => {
     return (
         <div className="shadow-lg mb-8 mx-auto lg:w-11/12 lg:flex lg:flex-row lg:h-auto">
-            <img
+            <Image
                 className="rounded-tr-lg rounded-tl-lg h-68 w-full lg:h-auto lg:w-6/12 lg:rounded-bl-lg lg:rounded-tr-none"
                 src={project.img}
                 alt=""

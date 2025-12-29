@@ -24,7 +24,7 @@ const BlogPostPage: NextPage<BlogPostPageProps> = ({ post }) => {
     return (
         <>
             <Head>
-                <title>{post.title} | Anish N.</title>
+                <title>{`${post.title} | Anish N.`}</title>
                 <meta
                     name="description"
                     content={`Blog post by Anish N. - ${post.title}`}
@@ -88,14 +88,14 @@ const BlogPostPage: NextPage<BlogPostPageProps> = ({ post }) => {
                                 <li className="mb-1">{children}</li>
                             ),
                             a: ({ href, children }) => (
-                                <a
-                                    href={href}
+                                <Link
+                                    href={href || '#'}
                                     className="text-blue-600 dark:text-blue-400 hover:text-blue-800 dark:hover:text-blue-300 underline"
                                     target="_blank"
                                     rel="noopener noreferrer"
                                 >
                                     {children}
-                                </a>
+                                </Link>
                             ),
                             blockquote: ({ children }) => (
                                 <blockquote className="border-l-4 border-gray-300 dark:border-gray-600 pl-4 italic my-4">

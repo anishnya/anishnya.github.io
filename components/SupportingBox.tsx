@@ -2,6 +2,7 @@ import { ReactNode } from 'react';
 // import ExtLink from './ExtLink';
 import IconImage from './IconImage';
 import personalInfo from './data/personalInfo.json';
+import Link from 'next/link';
 
 interface BoxProps {
     href: string;
@@ -11,7 +12,7 @@ interface BoxProps {
 }
 
 const Box = ({ href, label, onClick, children }: BoxProps) => (
-    <a
+    <Link
         target="_blank"
         rel="noopener noreferrer"
         href={href}
@@ -20,7 +21,7 @@ const Box = ({ href, label, onClick, children }: BoxProps) => (
         onClick={onClick}
     >
         {children}
-    </a>
+    </Link>
 );
 
 const SupportingBox = (): JSX.Element => {
