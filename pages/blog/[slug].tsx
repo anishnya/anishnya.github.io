@@ -11,6 +11,7 @@ import {
     getBlogPostBySlug,
     type BlogPost,
 } from '../../utils/blog';
+import BlogImage from '../../components/BlogImage';
 
 interface BlogPostPageProps {
     post: BlogPost;
@@ -69,11 +70,28 @@ const BlogPostPage: NextPage<BlogPostPageProps> = ({ post }) => {
                                     {children}
                                 </h3>
                             ),
-                            p: ({ children }) => (
-                                <p className="mb-4 leading-relaxed">
-                                    {children}
-                                </p>
-                            ),
+                            p: ({ children }) => {
+                                // Check if children contains block-level elements (like figure/img)
+                                const hasBlockElement = Array.isArray(children)
+                                    ? children.some(
+                                          (child: any) =>
+                                              child?.type === 'figure' ||
+                                              child?.props?.node?.tagName ===
+                                                  'img',
+                                      )
+                                    : false;
+
+                                // If it contains block elements, render without p tag
+                                if (hasBlockElement) {
+                                    return <>{children}</>;
+                                }
+
+                                return (
+                                    <p className="mb-4 leading-relaxed">
+                                        {children}
+                                    </p>
+                                );
+                            },
                             ul: ({ children }) => (
                                 <ul className="mb-4 ml-6 list-disc">
                                     {children}
@@ -137,6 +155,9 @@ const BlogPostPage: NextPage<BlogPostPageProps> = ({ post }) => {
                             },
                             pre: ({ children }) => (
                                 <pre className="my-4">{children}</pre>
+                            ),
+                            img: ({ src, alt, title }: any) => (
+                                <BlogImage src={src} alt={alt} title={title} />
                             ),
                         }}
                     >
