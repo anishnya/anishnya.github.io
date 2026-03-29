@@ -15,9 +15,9 @@ const NavLink = ({ title, shortTitle, href }: Props): JSX.Element => {
             <button
                 type="button"
                 className={`rounded-lg no-underline flex h-8 mr-0 px-3 sm:px-5
-					items-center border-none cursor-pointer font-bold text-sm
+					items-center border-none cursor-pointer font-bold text-sm text-white
 					transition-all duration-300 
-					${router.asPath === href ? 'bg-black dark:bg-white text-white dark:text-black' : 'bg-auto'}`}
+					${router.asPath === href ? 'bg-black/70 text-white' : 'bg-auto'}`}
             >
                 <span className="hidden sm:inline">{title}</span>
                 <span className="sm:hidden">{shortTitle}</span>

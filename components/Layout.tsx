@@ -1,6 +1,3 @@
-import { useWindowScrollPosition } from '@n8tb1t/use-scroll-position';
-import { useState } from 'react';
-
 // import ExtLink from './ExtLink';
 import Footer from './Footer';
 import Header from './Header';
@@ -10,19 +7,9 @@ interface Props {
 }
 
 const Layout = ({ children }: Props): JSX.Element => {
-    const [scrolled, setScrolled] = useState(true);
-
-    useWindowScrollPosition(({ currPos }: { currPos: { y: number } }) => {
-        if (currPos.y <= -20) {
-            setScrolled(true);
-        } else {
-            setScrolled(false);
-        }
-    }, {});
-
     return (
         <>
-            <Header scrolled={scrolled} />
+            <Header />
             <main>{children}</main>
             <Footer />
         </>

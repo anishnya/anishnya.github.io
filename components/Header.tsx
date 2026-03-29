@@ -5,16 +5,20 @@ import Image from 'next/image';
 import NavLink from './NavLink';
 import { Sun, Moon } from 'lucide-react';
 import { useTheme } from 'next-themes';
+import { useEffect, useState } from 'react';
 
-interface HeaderProps {
-    scrolled: boolean;
-}
-const Header = ({ scrolled }: HeaderProps): JSX.Element => {
+const Header = (): JSX.Element => {
     const { resolvedTheme, setTheme } = useTheme();
+    const [mounted, setMounted] = useState(false);
+
+    useEffect(() => {
+        setMounted(true);
+    }, []);
 
     return (
         <header
-            className={`z-10 pt-10 pb-1 pl-0 top-0 right-0 left-0 transition border-b ${scrolled ? 'border-gray-400' : 'bg-transparent border-transparent'} sticky w-screen backdrop-filter backdrop-blur-md`}
+            id="site-header"
+            className="fixed top-0 right-0 left-0 z-20 w-screen border-b border-black/20 bg-black/45 pt-10 pb-1 pl-0 text-white backdrop-blur-sm transition"
         >
             <div className="h-0 pb-9 px-5 max-w-4xl w-full flex items-center justify-between m-auto">
                 <Link href="/" className="flex items-center">
@@ -46,7 +50,9 @@ const Header = ({ scrolled }: HeaderProps): JSX.Element => {
                         }}
                     >
                         <abbr title="Switch theme">
-                            {resolvedTheme === 'light' ? (
+                            {!mounted ? (
+                                <Sun size={20} aria-label="Theme" />
+                            ) : resolvedTheme === 'light' ? (
                                 <Moon size={20} aria-label="Moon" />
                             ) : (
                                 <Sun size={20} aria-label="Sun" />
